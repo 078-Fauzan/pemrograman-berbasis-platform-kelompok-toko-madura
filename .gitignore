@@ -1,0 +1,49 @@
+# =====================
+# NODE.JS / BACKEND
+# =====================
+backend/node_modules/
+backend/.env
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+
+# =====================
+# FLUTTER / MOBILE
+# =====================
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+mobile/build/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/debug/
+mobile/android/app/profile/
+mobile/android/app/release/
+mobile/android/key.properties
+mobile/*.iml
+mobile/.idea/
+mobile/ios/Pods/
+mobile/ios/.symlinks/
+mobile/ios/Flutter/Flutter.framework
+mobile/ios/Flutter/Flutter.podspec
+
+# =====================
+# GENERAL
+# =====================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/settings.json
+.env
+.env.local
+*.log
+
+# =====================
+# FRONTEND (jika ada)
+# =====================
+frontend/node_modules/
+frontend/.env
