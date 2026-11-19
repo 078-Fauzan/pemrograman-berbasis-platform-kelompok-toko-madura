@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMKMate Web Portal — Manajemen Warung Madura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #006D40;
+      --primary-dark: #00502E;
+      --primary-light: #E8F5E9;
+      --surface: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --success: #10B981;
+      --danger: #EF4444;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--surface);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .server-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #F1F5F9;
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #94A3B8;
+    }
+
+    .status-dot.online {
+      background: var(--success);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: #D1E7DD;
+    }
+
+    .api-tester {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .api-tester h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .code-box {
+      background: #0F172A;
+      color: #38BDF8;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      background: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-icon">🏪</div>
+      <span>UMKMate Web</span>
+    </div>
+    <div class="server-status" id="serverStatusBadge">
+      <div class="status-dot" id="statusDot"></div>
+      <span id="statusText">Memeriksa Backend...</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Portal Web Manajemen Warung Madura</h1>
+      <p>Sistem Informasi & Point of Sale (POS) Multiplatform Terintegrasi</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>Aplikasi Web Interaktif (Flutter)</h3>
+        <p>Akses antarmuka lengkap UMKMate versi Web dengan visualisasi Material 3, POS Kasir, Katalog Produk, dan Laporan Keuangan.</p>
+        <button class="btn btn-primary" onclick="window.location.href='/';">Buka Aplikasi Web</button>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Backend REST API & Dokumentasi</h3>
+        <p>Terhubung ke Node.js + Express API dan database MySQL dengan autentikasi JWT dan 16 tabel relasional.</p>
+        <button class="btn btn-secondary" onclick="checkBackendHealth();">Cek Kesehatan API</button>
+      </div>
+    </div>
+
+    <div class="api-tester">
+      <h4>Status Koneksi API Backend</h4>
+      <div id="apiResult" class="code-box">Menunggu permintaan pengujian...</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Praktikum Pemrograman Berbasis Platform &bull; Kelompok Toko Madura &bull; Fauzan (078)</p>
+  </footer>
+
+  <script>
+    const API_BASE = window.location.hostname === 'localhost'
+      ? 'http://localhost:5000/api/v1'
+      : `http://${window.location.hostname}:5000/api/v1`;
+
+    async function checkBackendHealth() {
+      const resultBox = document.getElementById('apiResult');
+      const statusDot = document.getElementById('statusDot');
+      const statusText = document.getElementById('statusText');
+
+      resultBox.innerText = 'Menghubungi ' + API_BASE + '/health ...';
+
+      try {
+        const response = await fetch(`${API_BASE}/health`);
+        const data = await response.json();
+
+        resultBox.innerText = JSON.stringify(data, null, 2);
+        statusDot.classList.add('online');
+        statusText.innerText = 'Backend Aktif (Port 5000)';
+        statusText.style.color = '#10B981';
+      } catch (err) {
+        resultBox.innerText = 'Gagal terhubung ke API backend:\n' + err.message + '\n\nPastikan backend sudah dijalankan di port 5000 (node server.js).';
+        statusDot.classList.remove('online');
+        statusText.innerText = 'Backend Tidak Terhubung';
+        statusText.style.color = '#EF4444';
+      }
+    }
+
+    // Auto-check on load
+    window.addEventListener('DOMContentLoaded', checkBackendHealth);
+  </script>
+</body>
+</html>

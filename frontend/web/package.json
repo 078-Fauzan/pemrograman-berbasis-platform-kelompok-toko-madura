@@ -1,0 +1,13 @@
+{
+  "name": "umkmate-frontend-web",
+  "version": "1.0.0",
+  "description": "Frontend Web Portal & Dashboard untuk UMKMate - Sistem Informasi Warung Madura",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 8080 .",
+    "dev": "npx serve -l 8080 ."
+  },
+  "keywords": ["umkmate", "warung-madura", "frontend-web", "dashboard"],
+  "author": "078-Fauzan",
+  "license": "ISC"
+}

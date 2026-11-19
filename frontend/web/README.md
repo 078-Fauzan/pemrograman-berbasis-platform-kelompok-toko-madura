@@ -1,32 +1,44 @@
-# Frontend Web Dashboard — UMKMate
+# Frontend Web — UMKMate (Sistem Informasi Warung Madura)
 
-Bagian antarmuka web untuk sistem manajemen toko kelontong UMKMate.
-
----
-
-## 🎯 Tujuan Modul
-Menyediakan portal berbasis web bagi pemilik toko (*Owner*) untuk mengakses laporan keuangan komprehensif, ekspor data, dan analitik performa toko dari browser desktop.
+Antarmuka web untuk sistem manajemen operasional Warung Madura dan Toko Kelontong UMKMate.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
-- **Framework:** Svelte / SvelteKit (atau HTML5, CSS3, JavaScript modern)
-- **Komunikasi Data:** REST API via Fetch / Axios
-- **Autentikasi:** Bearer Token JWT yang tersimpan pada `sessionStorage` / `localStorage`
+## 🎯 Fitur & Kemampuan Versi Web
+- **Dashboard Pemilik Toko (Owner):** Visualisasi omset penjualan harian/bulanan, kartu ringkasan transaksi, grafik penjualan 7 hari, dan peringatan stok menipis.
+- **Katalog & Manajemen Produk:** Kelola harga jual, harga modal (HPP), kategori barang, dan stok minimum.
+- **Kasir Point of Sale (POS):** Antarmuka kasir responsif untuk browser desktop dengan kalkulasi subtotal dan diskon otomatis.
+- **Antarmuka Responsif:** Menggunakan tata letak adaptif desktop dengan sidebar navigasi di sebelah kiri pada layar lebar.
+- **Resolusi Host Dinamis:** Otomatis menyesuaikan endpoint API sesuai host pemanggil (`localhost:5000` atau IP LAN `192.168.0.x:5000`).
 
 ---
 
-## 🚀 Cara Menjalankan (Pengembangan)
-1. Buka folder `frontend/web`:
+## 🛠️ Cara Menjalankan Versi Web
+
+### Opsi 1: Menggunakan Web Server Lokal (Port 8080)
+1. Dari folder root proyek:
    ```bash
-   cd frontend/web
+   python -m http.server 8080 --directory "mobile/build/web"
    ```
-2. Pasang dependensi jika menggunakan node-based package:
+2. Atau dari folder `frontend/web`:
    ```bash
-   npm install
+   npm start
    ```
-3. Jalankan development server:
+3. Buka browser pada alamat:
+   - Akses lokal di komputer: [http://localhost:8080](http://localhost:8080)
+   - Akses via jaringan Wi-Fi LAN: `http://192.168.0.102:8080`
+
+### Opsi 2: Menjalankan via Flutter Web (Mode Pengembangan)
+1. Masuk ke folder `mobile`:
    ```bash
-   npm run dev
+   cd mobile
    ```
-4. Akses melalui browser pada alamat yang tertera (biasanya `http://localhost:5173`).
+2. Jalankan di browser Google Chrome:
+   ```bash
+   flutter run -d chrome
+   ```
+3. Atau kompilasi bundel produksi web:
+   ```bash
+   flutter build web
+   ```
+   Hasil kompilasi tersimpan di `mobile/build/web`.
