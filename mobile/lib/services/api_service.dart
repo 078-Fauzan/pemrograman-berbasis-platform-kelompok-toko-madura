@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'storage_service.dart';
 
@@ -45,10 +44,10 @@ class ApiService {
           .timeout(_timeout);
 
       return _processResponse(response);
-    } on SocketException {
+    } on http.ClientException {
       return ApiResponse(
         success: false,
-        message: 'Tidak dapat terhubung ke server. Periksa koneksi Wi-Fi atau IP backend (192.168.1.25).',
+        message: 'Tidak dapat terhubung ke server backend. Periksa koneksi jaringan atau server.',
         statusCode: 0,
       );
     } catch (e) {
@@ -77,7 +76,7 @@ class ApiService {
           .timeout(_timeout);
 
       return _processResponse(response);
-    } on SocketException {
+    } on http.ClientException {
       return ApiResponse(
         success: false,
         message: 'Tidak dapat terhubung ke server backend.',
@@ -109,7 +108,7 @@ class ApiService {
           .timeout(_timeout);
 
       return _processResponse(response);
-    } on SocketException {
+    } on http.ClientException {
       return ApiResponse(
         success: false,
         message: 'Tidak dapat terhubung ke server backend.',
@@ -141,7 +140,7 @@ class ApiService {
           .timeout(_timeout);
 
       return _processResponse(response);
-    } on SocketException {
+    } on http.ClientException {
       return ApiResponse(
         success: false,
         message: 'Tidak dapat terhubung ke server backend.',
@@ -165,7 +164,7 @@ class ApiService {
           .timeout(_timeout);
 
       return _processResponse(response);
-    } on SocketException {
+    } on http.ClientException {
       return ApiResponse(
         success: false,
         message: 'Tidak dapat terhubung ke server backend.',

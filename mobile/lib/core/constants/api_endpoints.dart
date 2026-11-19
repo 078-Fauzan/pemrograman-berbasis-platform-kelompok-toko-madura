@@ -9,9 +9,17 @@ class ApiEndpoints {
       return _customBaseUrl;
     }
 
-    // Jika berjalan di Web atau Desktop Windows/macOS/Linux:
-    if (kIsWeb ||
-        defaultTargetPlatform == TargetPlatform.windows ||
+    // Jika berjalan di Web:
+    if (kIsWeb) {
+      final host = Uri.base.host;
+      if (host.isNotEmpty && host != '0.0.0.0') {
+        return 'http://$host:5000/api/v1';
+      }
+      return 'http://localhost:5000/api/v1';
+    }
+
+    // Jika berjalan di Desktop Windows/macOS/Linux:
+    if (defaultTargetPlatform == TargetPlatform.windows ||
         defaultTargetPlatform == TargetPlatform.macOS ||
         defaultTargetPlatform == TargetPlatform.linux) {
       return 'http://localhost:5000/api/v1';
