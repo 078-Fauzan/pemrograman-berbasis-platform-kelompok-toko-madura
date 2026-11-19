@@ -27,12 +27,14 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  /*
   void _fillDemo(String email, String password) {
     setState(() {
       _emailController.text = email;
       _passwordController.text = password;
     });
   }
+  */
 
   Future<void> _handleLogin() async {
     if (!_formKey.currentState!.validate()) return;
@@ -191,6 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: _handleLogin,
                   ),
 
+                  /*
                   const SizedBox(height: 28),
 
                   // Divider Quick Demo
@@ -250,6 +253,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
+                  */
 
                   const SizedBox(height: 32),
 
